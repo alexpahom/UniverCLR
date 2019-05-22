@@ -1,0 +1,40 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly Wrapper, Version=1.0.*, Culture=Invariant Language (Invariant Country): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class Wrapper.WGood: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Good*): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Int32, System.String, System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    setId(Int32): PrivateScope, Public, HideBySig
+    setType(String): PrivateScope, Public, HideBySig
+    setModel(String): PrivateScope, Public, HideBySig
+    setManufacturer(String): PrivateScope, Public, HideBySig
+    getId(): PrivateScope, Public, HideBySig
+    getType(): PrivateScope, Public, HideBySig
+    getModel(): PrivateScope, Public, HideBySig
+    getManufacturer(): PrivateScope, Public, HideBySig
+    self(Good*): PrivateScope, Public, HideBySig
+Class Wrapper.WGoodContainer: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    begin(GoodIterator<Good>*): PrivateScope, Public, HideBySig
+    end(GoodIterator<Good>*): PrivateScope, Public, HideBySig
+    getGoods(): PrivateScope, Public, HideBySig
+    add(WGood): PrivateScope, Public, HideBySig
+    drop_by_id(Int32): PrivateScope, Public, HideBySig
+    clear(): PrivateScope, Public, HideBySig
+    find_by_id(Int32): PrivateScope, Public, HideBySig
+    is_id_unique(Int32): PrivateScope, Public, HideBySig
+    save(): PrivateScope, Public, HideBySig
+    load(): PrivateScope, Public, HideBySig
+Class Wrapper.Class1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

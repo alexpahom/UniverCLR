@@ -1,0 +1,9 @@
+﻿  stdafx.cpp
+  AssemblyInfo.cpp
+  GoodWrapper.cpp
+  Wrapper.cpp
+  Generating Code...
+c:\users\pakhomchikai\documents\visual studio 2017\projects\kursova9dll\goods\goods\goods.cpp(113): warning C4715: 'GoodContainer::find_by_id': not all control paths return a value
+  .NETFramework,Version=v4.6.1.AssemblyAttributes.cpp
+  AssemblyInfo.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  Wrapper.vcxproj -> C:\Users\pakhomchikai\Documents\Visual Studio 2017\Projects\Kursova9CLR\Wrapper\Debug\Wrapper.dll
