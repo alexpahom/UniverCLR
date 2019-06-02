@@ -8,6 +8,7 @@ namespace Wrapper {
 	//
 	//		GOOD CLASS
 	//
+	// Каждый конструктор создает экземпляр С++ класса Good
 	WGood::WGood() {
 		instanceGood = new Good();
 	};
@@ -26,7 +27,7 @@ namespace Wrapper {
 		instanceGood = new Good(id, type, model, manufacturer);
 	};
 
-	// Convert System.String to std::string
+	// Конвертация строки типа System.String в std::string
 	std::string MarshalStdString(String ^ s) {
 		using namespace Runtime::InteropServices;
 		std::string os = "";
@@ -37,16 +38,16 @@ namespace Wrapper {
 		return os;
 	}
 
-	// Convert std::string to System.String
+	// Конвертация строки типа std::string в System.String
 	String^ MarshalSysString(std::string s) { return gcnew String(s.c_str()); }
 
-	// Setters
+	// Сеттеры
 	void WGood::setId(int id) { instanceGood->setId(id); };
 	void WGood::setType(String^ type) { instanceGood->setType(MarshalStdString(type)); };
 	void WGood::setModel(String^ model) { instanceGood->setModel(MarshalStdString(model)); };
 	void WGood::setManufacturer(String^ manufacturer) { instanceGood->setManufacturer(MarshalStdString(manufacturer)); };
 
-	// Getters
+	// Геттеры
 	int WGood::getId() { return instanceGood->getId(); };
 	String^ WGood::getType() { return MarshalSysString(instanceGood->getType()); };
 	String^ WGood::getModel() { return MarshalSysString(instanceGood->getModel()); };
@@ -59,6 +60,12 @@ namespace Wrapper {
 	//
 	//		GOOD CONTAINER CLASS
 	//
+	// Конструктор создает экземпляр С++ класса GoodContainer и список
+	WGoodContainer::WGoodContainer() {
+		instanceContainer = new GoodContainer();
+		goods = gcnew List<WGood^>();
+	};
+
 	WGoodContainer::iterator WGoodContainer::begin() {
 		return instanceContainer->begin();
 	};
@@ -68,10 +75,12 @@ namespace Wrapper {
 	};
 
 	List<WGood^>^ WGoodContainer::getGoods() {
+		// создается временная переменная векторного типа
 		std::vector<Good> v = instanceContainer->getGoods();
 		goods->Clear();
 		for each (auto good in v)
 		{
+			// В список типа List добавляются все элементы из вектора 
 			goods->Add(gcnew WGood(good));
 		}
 		return goods;

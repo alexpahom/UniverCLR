@@ -6,29 +6,32 @@ using namespace System;
 using namespace System::Collections::Generic;
 
 namespace Wrapper {
+	// Методы перевода строки между типами System.String и std::string
 	std::string MarshalStdString(String ^ s);
 	String^ MarshalSysString(std::string s);
 
-	//
-	//			GOOD CLASS
-	//
+	//-----------------------------------------------------------------
+	//-----------------			GOOD CLASS           ------------------
+	//-----------------------------------------------------------------
+	// 'ref' позволяет сделать С++ класс управляемым
 	public ref class WGood {
 		int id;
 		String ^type, ^model, ^manufacturer;
 		Good *instanceGood;
 
 	public:
+		// Конструкторы
 		WGood();
 		WGood(int id, String^ type, String^ model, String^ manufacturer);
 		WGood(Good good);
 
-		// Setters
+		// Сеттеры
 		void setId(int id);
 		void setType(String^ type);
 		void setModel(String^ model);
 		void setManufacturer(String^ manufacturer);
 
-		// Getters
+		// Геттеры
 		int getId();
 		String^ getType();
 		String^ getModel();
@@ -37,20 +40,16 @@ namespace Wrapper {
 	};
 
 	//---------------------------------------------------------------
+	//
+	//------------------		GOOD CONTAINER		-----------------
 	//---------------------------------------------------------------
-	//
-	//		GOOD CONTAINER
-	//
+	// 'ref' позволяет сделать С++ класс управляемым
 	public ref class WGoodContainer
 	{
 		List<WGood^>^ goods;
 		GoodContainer *instanceContainer;
 	public:
-
-		WGoodContainer() {
-			instanceContainer = new GoodContainer();
-			goods = gcnew List<WGood^>();
-		}
+		WGoodContainer();
 		typedef GoodIterator<Good> iterator;
 		iterator begin();
 		iterator end();
