@@ -22,6 +22,7 @@ namespace Wrapper {
 	public:
 		// Конструкторы
 		WGood();
+		~WGood();
 		WGood(int id, String^ type, String^ model, String^ manufacturer);
 		WGood(Good good);
 
@@ -50,6 +51,7 @@ namespace Wrapper {
 		GoodContainer *instanceContainer;
 	public:
 		WGoodContainer();
+		~WGoodContainer();
 		typedef GoodIterator<Good> iterator;
 		iterator begin();
 		iterator end();

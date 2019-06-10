@@ -12,6 +12,9 @@ namespace Wrapper {
 	WGood::WGood() {
 		instanceGood = new Good();
 	};
+	WGood::~WGood() {
+		delete instanceGood;
+	};
 	WGood::WGood(int id, String^ type, String^ model, String^ manufacturer) {
 		std::string _type = MarshalStdString(type);
 		std::string _model = MarshalStdString(model);
@@ -64,6 +67,9 @@ namespace Wrapper {
 	WGoodContainer::WGoodContainer() {
 		instanceContainer = new GoodContainer();
 		goods = gcnew List<WGood^>();
+	};
+	WGoodContainer::~WGoodContainer() {
+		delete instanceContainer;
 	};
 
 	WGoodContainer::iterator WGoodContainer::begin() {

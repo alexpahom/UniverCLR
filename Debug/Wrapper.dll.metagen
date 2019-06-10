@@ -13,6 +13,8 @@ Class Wrapper.WGood: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(Good*): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(Int32, System.String, System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
   Methods:
     setId(Int32): PrivateScope, Public, HideBySig
     setType(String): PrivateScope, Public, HideBySig
@@ -23,8 +25,11 @@ Class Wrapper.WGood: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     getModel(): PrivateScope, Public, HideBySig
     getManufacturer(): PrivateScope, Public, HideBySig
     self(Good*): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
 Class Wrapper.WGoodContainer: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
   Methods:
     begin(GoodIterator<Good>*): PrivateScope, Public, HideBySig
     end(GoodIterator<Good>*): PrivateScope, Public, HideBySig
@@ -36,3 +41,4 @@ Class Wrapper.WGoodContainer: AutoLayout, AnsiClass, Class, Public, BeforeFieldI
     is_id_unique(Int32): PrivateScope, Public, HideBySig
     save(): PrivateScope, Public, HideBySig
     load(): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
